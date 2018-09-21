@@ -1,5 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+.nav{
+  background-color: #ba68c8;
+}
+.purple{
+  text-decoration-color: blueviolet;
 }
