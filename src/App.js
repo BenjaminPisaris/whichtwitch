@@ -1,47 +1,49 @@
-import React, { Component } from 'react';
-import './App.css';
-import ReactTwitchEmbedVideo from "react-twitch-embed-video";
-var Navbar = require('react-bootstrap').Navbar;
-var FormGroup = require('react-bootstrap').FormGroup;
-var Button = require('react-bootstrap').Button;
-var FormControl = require('react-bootstrap').FormControl;
+import React, { Component, createElement } from 'react';
+import Layout from './components/layout';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
+
+
+
+
+
+
 class App extends Component {
   constructor() {
     super();
-    this.state = { 
-      message: '',
-      channel: "ninja",
-    };
     
   }
+  state = { streams: 0 }
 
   
 
-  render() {
-    return (
-      <div className="App">
-       <Navbar>
-  <Navbar.Header>
-    
-      <h2>WhichTwitch</h2>
-    
-    <Navbar.Toggle />
-  </Navbar.Header>
-  <Navbar.Collapse>
-    <Navbar.Form pullLeft>
-      <FormGroup>
-        <FormControl type="text" placeholder="Search" />
-      </FormGroup>{' '}
-      <Button type="submit">Search</Button>
-    </Navbar.Form>
-  </Navbar.Collapse>
-</Navbar>;
 
-<ReactTwitchEmbedVideo channel={this.state.channel} />
-        
-      </div>
-    );
-  }
+
+
+
+render() {
+  return (
+    <div className="App">
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <Typography variant="title" color="inherit">
+            <h2>WhichTwitch</h2>
+          </Typography>
+          <Button onClick={null}>Add Stream</Button>
+          
+        </Toolbar>
+      </AppBar>
+      <Layout key={1}/>
+      <Layout key={2}/>
+      <Layout key={3}/>
+    </div>
+  );
+}
 }
 
 
